@@ -41,28 +41,28 @@ crypto-frontend/
 ├── public/
 │   └── index.html
 ├── src/
-│   ├── api/                   # Axios setup & API call helpers
-│   │   ├── userApi.js			"
+│   ├── api/                    # Axios setup & API call helpers
+│   │   ├── userApi.js			
 │   │   ├── transactionApi.js
 │   │   └── marketApi.js
 │
-│   ├── components/            # Reusable UI components
+│   ├── components/             # Reusable UI components
 │   │   ├── BalanceCard.jsx
-│   │   ├── BuySellForm.jsx	"
+│   │   ├── BuySellForm.jsx	
 │   │   ├── MarketPrices.jsx
 │   │   ├── ReturnsTable.jsx
 │   │   └── TransactionTable.jsx
 │
-│   ├── pages/                 # Route-level pages
-│   │   ├── DashboardPage.jsx	"
+│   ├── pages/                  # Route-level pages
+│   │   ├── DashboardPage.jsx	
 │   │   ├── BuySellPage.jsx
 │   │   ├── HistoryPage.jsx
 │   │   └── AdminPage.jsx
 │
-│   ├── styles/                # Optional custom CSS / Tailwind config
+│   ├── styles/                 # Optional custom CSS / Tailwind config
 │   │   └── index.css
 │
-│   ├── App.jsx                "	# Main App entry with routes
+│   ├── App.jsx                	# Main App entry with routes
 │   ├── index.js               	# React DOM render
 │   └── config.js              	# Base API URL, user config, constants
 
