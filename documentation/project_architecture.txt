@@ -1,0 +1,68 @@
+Project Structure (Backend)
+
+com.example.crypto/
+├── controller/
+│   ├── TransactionController.java
+│   ├── UserController.java        		// Balance, reset
+│   └── MarketDataController.java          // Real-time prices (optionally via WebSocket or REST proxy)
+├── service/
+│   ├── TransactionService.java
+│   ├── UserService.java
+│   └── MarketDataService.java
+├── dao/
+│   ├── UserDao.java
+│   ├── TransactionDao.java
+├── model/
+│   ├── User.java
+│   ├── Transaction.java
+
+
+API Endpoints
+
+/api/user
+	 /balance?userId={userId} -> for fetching the user's current balance.
+	 /reset?userId={userId}   -> for reseting user's balance and deleting transaciton history
+
+/api/transaction
+		 /buy?userId={userId}&currency={what_currency_to_buy}&=amount={amount_to_buy} -> for buying cryptocurencies if balance is sufficient
+
+		/sell?userId={userId}&currency={what_currency_to_buy}&=amount={amount_to_buy} -> for selling cryptocurencies
+		/history?userId={userId} -> for fetching all historical transactions of user
+		/returns?userId={userId} -> for calculating total returns for each currency bought
+
+/api/market
+	   /prices -> for fetching in the currency prices in real time
+	   /supportedPairs -> for fetching all supported trading pairs
+
+
+Project Structure (Frontend)
+
+crypto-frontend/
+├── public/
+│   └── index.html
+├── src/
+│   ├── api/                   # Axios setup & API call helpers
+│   │   ├── userApi.js			"
+│   │   ├── transactionApi.js
+│   │   └── marketApi.js
+│
+│   ├── components/            # Reusable UI components
+│   │   ├── BalanceCard.jsx
+│   │   ├── BuySellForm.jsx	"
+│   │   ├── MarketPrices.jsx
+│   │   ├── ReturnsTable.jsx
+│   │   └── TransactionTable.jsx
+│
+│   ├── pages/                 # Route-level pages
+│   │   ├── DashboardPage.jsx	"
+│   │   ├── BuySellPage.jsx
+│   │   ├── HistoryPage.jsx
+│   │   └── AdminPage.jsx
+│
+│   ├── styles/                # Optional custom CSS / Tailwind config
+│   │   └── index.css
+│
+│   ├── App.jsx                "	# Main App entry with routes
+│   ├── index.js               	# React DOM render
+│   └── config.js              	# Base API URL, user config, constants
+
