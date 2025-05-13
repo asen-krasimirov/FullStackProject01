@@ -4,7 +4,7 @@ com.example.crypto/
 ├── controller/
 │   ├── TransactionController.java
 │   ├── UserController.java        		// Balance, reset
-│   └── MarketDataController.java          // Real-time prices (optionally via WebSocket or REST proxy)
+│   └── MarketDataController.java          	// Real-time prices
 ├── service/
 │   ├── TransactionService.java
 │   ├── UserService.java
